@@ -76,14 +76,14 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && bash -c "$(curl -L https://basemount.basespace.illumina.com/install)" \
     && gem install showterm \
     && wget --quiet https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh \
-    && /bin/bash Miniconda2-latest-Linux-x86_64.sh -b -p ~/.conda2 \
-    && rm Miniconda2-latest-Linux-x86_64.sh \
-    && ~/.conda2/bin/conda config --add channels defaults \
-    && ~/.conda2/bin/conda config --add channels conda-forge \
-    && ~/.conda2/bin/conda config --add channels r \
-    && ~/.conda2/bin/conda config --add channels bioconda \
-    && ~/.conda2/bin/conda update --all \
-    && ~/.conda2/bin/conda clean -tipsy \
+    && /bin/bash Miniconda3-latest-Linux-x86_64.sh -b -p ~/.conda3 \
+    && rm Miniconda3-latest-Linux-x86_64.sh \
+    && ~/.conda3/bin/conda config --add channels defaults \
+    && ~/.conda3/bin/conda config --add channels conda-forge \
+    && ~/.conda3/bin/conda config --add channels r \
+    && ~/.conda3/bin/conda config --add channels bioconda \
+    && ~/.conda3/bin/conda update --all \
+    && ~/.conda3/bin/conda clean -tipsy \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
     && /dockerstartup/generate_container_user.sh \
     && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
