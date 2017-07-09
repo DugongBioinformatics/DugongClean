@@ -60,9 +60,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-get install -y --allow-unauthenticated --force-yes bio-linux-keyring \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && apt-get update && apt-get install -y --allow-unauthenticated make grep sed sudo dpkg git wget zip \
-    build-essential python python-dev bzip2 locales ca-certificates vim gdebi-core bash-completion apt-utils \
+    build-essential python3 python3-dev bzip2 locales ca-certificates vim gdebi-core bash-completion apt-utils \
     openjdk-8-jre openssh-server unzip curl net-tools icedtea-8-plugin zlib1g-dev libqt4-dbus libqt4-network nodejs \
-    ruby-dev rubygems ruby screen mlocate nano asciinema \
+    ruby-dev rubygems ruby screen mlocate nano asciinema python3-pip python3-numpy \
     && wget --quiet https://github.com/krallin/tini/releases/download/v0.10.0/tini \
     && echo "1361527f39190a7338a0b434bd8c88ff7233ce7b9a4876f3315c22fce7eca1b0 *tini" | sha256sum -c - \
     && mv tini /usr/local/bin/tini && chmod +x /usr/local/bin/tini \
