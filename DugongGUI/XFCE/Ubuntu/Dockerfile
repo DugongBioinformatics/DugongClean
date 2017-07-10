@@ -131,7 +131,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV LANG C.UTF-8
 
-VOLUME ["/data"]
+VOLUME ["$HOME/data"]
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
@@ -139,4 +139,4 @@ ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 RUN chmod 777 /var/tmp && chown -R root:root /var/tmp && chmod 777 /tmp && chown -R root:root /tmp
 
 USER dugong
-WORKDIR /data
+WORKDIR $HOME/data
