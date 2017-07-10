@@ -109,4 +109,7 @@ CMD ["--tail-log"]
 EXPOSE 22
 EXPOSE 3000
 
+RUN chmod 777 /var/tmp && chown -R root:root /var/tmp && chmod 777 /tmp && chown -R root:root /tmp \
+    && chown -R $USER:$USER $HOME/data
+
 WORKDIR $HOME/data
