@@ -136,7 +136,8 @@ VOLUME ["$HOME/data"]
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 
-RUN chmod 777 /var/tmp && chown -R root:root /var/tmp && chmod 777 /tmp && chown -R root:root /tmp
+RUN chmod 777 /var/tmp && chown -R root:root /var/tmp && chmod 777 /tmp && chown -R root:root /tmp \
+    && chown -R $USER:$USER $HOME/data
 
 USER dugong
 WORKDIR $HOME/data
