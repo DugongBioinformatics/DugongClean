@@ -8,7 +8,7 @@ source $HOME/.bashrc
 
 cd $HOME/data
 nodejs /tty.js/tty-me.js --daemonize
-source .bashrc
+source $HOME/.bashrc
 
 while [ 1 ]; do
     /bin/bash
