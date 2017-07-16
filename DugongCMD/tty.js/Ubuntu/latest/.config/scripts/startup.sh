@@ -6,7 +6,9 @@ set -e
 # should also source $STARTUPDIR/generate_container_user
 source $HOME/.bashrc
 
-cd /tty.js && nodejs ./tty-me.js --daemonize
+cd $HOME/data
+nodejs /tty.js/tty-me.js --daemonize
+source .bashrc
 
 while [ 1 ]; do
     /bin/bash
